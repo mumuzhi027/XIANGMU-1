@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼夕夕，新电商开发者</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: #FFEDF1;
+        }
+        a{
+            background-color: white;
+        }
+        .body-themes a:hover{
+            opacity: 0.8;
+        }
+        .body-activities a:hover{
+            opacity: 0.8;
+        }
+        .box{
+            top: 0px;
+            height: 103px;
+            width: 100%;
+            background-color: white;
+            border-bottom: 4px solid #ED435B;
+            position: fixed;
+            z-index: 9999;
+        }
+        .box .head{
+            width: 80%;
+            height: 80%;
+            margin: auto;
+            position: relative;
+            background-color: white;
+        }
+        .box .head img{
+            width: 180px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        ul{
+            list-style: none;
+        }
+        .box .head ul{
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            background-color: white;
+        }
+        .head-activities span{
+            background-color: #FFEDF1;
+        }
+        .head-themes span{
+            background-color: #FFEDF1;
+        }
+        .box .head ul li{
+            float: left;
+            padding: 0 10px;
+            border-right: 1px solid ;
+            background-color: white;
+        }
+        a{
+            text-decoration: none;
+        }
+        a span{
+            color: gray;
+            background-color: white;
+        }
+        .box .head ul li .num1{
+            color: red;
+            font-weight: 700;
+        }
+        .box .head ul li:last-child{
+            border: none;
+        }
+        .QRcode{
+            width: 152px;
+            height: 200px;
+            position: fixed;
+            background-color: white;
+            bottom: 150px;
+            left: -76px;
+        }        
+        .QRcode:hover{
+            left: 0;
+        }
+        .QRcode .box1{
+            margin: 5px;
+            border: 2px solid #FFEDF1;
+            padding: 20px 15px 8px;
+            background-color: white;
+        }
+        .QRcode .box1 img{
+            width: 100%;
+        }
+        .QRcode .box1 .box-QRcode{
+            color: gray;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: center;
+            background-color: white;
+        }
+        .QRcode .box1 .box-QRcode span{
+            background-color: white;
+        }
+        .advertisers{
+            width: 100%;
+            height: 350px;
+            margin-top: 107px;
+        }
+        .advertisers img{
+            width: 100%;
+            height: 100%;
+        }
+        .head-activities{
+            margin: auto;
+            width: 80%;
+            height: 120px;
+            border-bottom: 1px solid;
+        }
+        .head-activities span{
+            position:relative;
+            font-size: larger;
+            bottom: -65%;
+        }
+        .head-activities a{
+            background-color: #FFEDF1;
+        }
+        .head-activities a span{
+            right: -88%;
+            color: gray;
+        }
+        .body-activities{
+            margin: auto;
+            margin-top: 45px;
+            width: 80%;
+            height: 550px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box1-activities{
+            margin: auto;
+            width: 100%;
+            height: 278px;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+        .box1-activities a{
+            position: relative;
+            bottom: -13px;
+            right: -10px;
+        }
+        .box2-activities{
+            margin: right;
+            height: 240px;
+            width: 28%;
+            background-color: white;
+            margin-right: 20px;
+        }
+        .box2-activities a{
+            position: relative;
+            bottom: -13px;
+            right: -12px;
+        }        
+        .box3-activities{
+            margin: right;
+            height: 240px;
+            width: 40.5%;
+            background-color: white;
+            margin-right: 20px;
+        }
+        .box3-activities a{
+            position: relative;
+            bottom: -13px;
+            right: -12px;
+        }        
+        .box4-activities{
+            margin: right;
+            height: 240px;
+            width: 28%;
+            background-color: white;
+        }
+        .box4-activities a{
+            position: relative;
+            bottom: -13px;
+            right: -12px;
+        }          
+        .head-themes{
+            margin: auto;
+            width: 80%;
+            height: 120px;
+            border-bottom: 1px solid;
+        }
+        .head-themes span{
+            position: relative;
+            font-size: larger;
+            bottom: -65%;
+        }
+        .head-themes a{
+            background-color: #FFEDF1;
+        }
+        .head-themes a span{
+            right: -88%;
+            color: gray;
+        }
+        .body-themes{
+            margin: auto;
+            width: 80%;
+            height: 3350px;
+            display: flex;
+            flex-wrap: wrap;            
+        }
+        .box1-themes{
+            margin-top: 45px;
+            margin-right: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px;
+        }
+        .box1-themes img{
+            position: relative;            
+            bottom: -12px;
+            right: -8px;
+        }
+        .box2-themes{
+            margin-top: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px; 
+        }        
+        .box2-themes img{
+            position: relative;
+            bottom: -12px;
+            right: -8px;
+        }
+        .box3-themes{
+            margin-top: 45px;
+            margin-right: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px;
+        }
+        .box3-themes img{
+            position: relative;            
+            bottom: -12px;
+            right: -8px;
+        }
+        .box4-themes{
+            margin-top: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px; 
+        }        
+        .box4-themes img{
+            position: relative;
+            bottom: -12px;
+            right: -8px;
+        }
+        .box5-themes{
+            margin-top: 45px;
+            margin-right: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px;
+        }
+        .box5-themes img{
+            position: relative;            
+            bottom: -12px;
+            right: -8px;
+        }
+        .box6-themes{
+            margin-top: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px; 
+        }        
+        .box6-themes img{
+            position: relative;
+            bottom: -12px;
+            right: -8px;
+        }
+        .box7-themes{
+            margin-top: 45px;
+            margin-right: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px;
+        }
+        .box7-themes img{
+            position: relative;            
+            bottom: -12px;
+            right: -8px;
+        }
+        .box8-themes{
+            margin-top: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px; 
+        }        
+        .box8-themes img{
+            position: relative;
+            bottom: -12px;
+            right: -8px;
+        }
+        .box9-themes{
+            margin-top: 45px;
+            margin-right: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px;
+        }
+        .box9-themes img{
+            position: relative;            
+            bottom: -12px;
+            right: -8px;
+        }
+        .box10-themes{
+            margin-top: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px; 
+        }        
+        .box10-themes img{
+            position: relative;
+            bottom: -12px;
+            right: -8px;
+        }
+        .box11-themes{
+            margin-top: 45px;
+            margin-right: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px;
+        }
+        .box11-themes img{
+            position: relative;            
+            bottom: -12px;
+            right: -8px;
+        }
+        .box12-themes{
+            margin-top: 45px;
+            background-color: white;
+            width: 48%;
+            height: 510px; 
+        }        
+        .box12-themes img{
+            position: relative;
+            bottom: -12px;
+            right: -8px;
+        }
+        .end-one{
+            margin-top: 80px; 
+            background-color: white;
+            width: 100%;
+            height: 450px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .qrcode{
+            padding:81;
+            background-color: white;
+            margin-right: 60px;
+            margin-top: 100px;
+        }
+        .qrcode:first-child{
+            margin-left: 240px;
+        }
+        .qrcode span{
+            background-color: white;
+        }
+        .text-qrcode{
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: center;
+            background-color: white;
+        }
+        .text-qrcode span{
+            margin: 0;
+        }
+        .contact{
+            width: 580px;
+            height: 200px;
+            background-color: white;
+        }
+        .contact ul{
+            background-color: white;
+            border-left: 1px solid;
+            padding-left: 30px;
+        }
+        .contact ul li{
+            margin: 15px;
+            background-color: white;
+        }
+        .contact ul li:first-child{
+            font-size: 25px;
+            margin-top: 80px;
+        }
+        .more{
+            background-color: white
+        }
+        .more ul{
+            position:relative;
+            right: -15%;
+            top: 8%;
+            background-color: white;
+        }
+        .more ul li{            
+            float:left;
+            padding: 0 10px;
+            border-right: 1px solid gray;
+            background-color: white;
+        }
+        .more ul li:last-child{
+            border-right: none;
+        }
+        .end-two{
+            background-color: rgb(57, 53, 71);
+            width: 100%;
+            height: 160px;
+        }
+        .end-two span{
+            color: rgb(128, 128, 128);
+            background-color: rgb(57, 53, 71);
+        }
+        .end-two ul li{
+            float: left;
+            padding:0 10px;
+            background-color: rgb(57, 53, 71);
+            border-right: 1px solid rgb(128, 128, 128);
+        }
+        .text-two ul li:nth-child(3){
+            border-right: none;
+        }
+        .text-three ul li:nth-child(1){
+            border-right: none;
+        }        
+        .text-three ul li:nth-child(2){
+            border-right: none;
+        }        
+        .text-three ul li:nth-child(4){
+            border-right: none;
+        }
+        .end-two div{
+            width:100%;
+            height: 20px;
+            padding-top: 10px;
+            background-color: rgb(57, 53, 71);
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        }
+        .end-three{
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            width: 100%;
+            height: 70px;
+            background-color: white;
+        }
+        .end-three img{
+            margin-right: 20px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="head">
+            <a href="#">
+                <img src="https://cdn.pinduoduo.com/upload/home/img/common/pdd_logo_v2.png" >
+            </a>
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="num1">首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>拼多多商家入驻</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>热点资讯</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>社会招聘</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>校园招聘</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>招采平台</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>帮助中心</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>举报平台</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>分享赚钱</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="num10">查快递</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="QRcode">
+        <div class="box1">
+            <img src="https://cdn.pinduoduo.com/upload/e48dac21-db3b-4801-b047-6f14d0805614.png.slim.png">
+            <div class="box-QRcode">
+                <span>微信扫码下载</span>
+                <span>App专享优惠</span>
+            </div>
+        </div>
+    </div>
+    <div class="advertisers">
+        <a href="#">
+            <img src="https://cdn.pinduoduo.com/upload/2020-12-14/7531b9a5-e242-4124-89df-254df0862ab5.jpg">
+        </a>
+    </div>
+    <div class="head-activities">
+        <span>精彩活动</span>
+        <a href="#">
+            <span>更多 ></span>
+        </a>
+    </div>
+    <div class="body-activities">
+        <div class="box1-activities">
+            <a href="#">
+                <img src="https://cdn.pinduoduo.com/upload/home/img/index/seckill_v2.jpg">
+            </a>
+        </div>
+        <div class="box2-activities">
+            <a href="#">
+                <img src="https://cdn.pinduoduo.com/upload/home/img/index/sale_v2.jpg">
+            </a>
+        </div>
+        <div class="box3-activities">
+            <a href="#">
+                <img src="https://cdn.pinduoduo.com/upload/home/img/index/supermarket_v2.jpg">
+            </a>
+        </div>
+        <div class="box4-activities">
+            <a href="#">
+                <img src="https://cdn.pinduoduo.com/upload/home/img/index/download.jpg">
+            </a>
+        </div>
+    </div>
+    <div class="head-themes">
+        <span>精选专题</span>
+        <a href="#">
+        <span>更多 ></span>
+        </a>
+    </div>
+    <div class="body-themes">
+        <div class="box1-themes">
+            <a href="#">
+                <img src="./jpg1.png" width="556">
+            </a>
+        </div>
+        <div class="box2-themes">
+            <a href="#">
+                <img src="./jpg2.png" width="556">
+            </a>
+        </div>
+        <div class="box3-themes">
+            <a href="#">
+                <img src="./jpg3.png" width="556">
+            </a>
+        </div>
+        <div class="box4-themes">
+            <a href="#">
+                <img src="./jpg4.png" width="556">
+            </a>
+        </div>
+        <div class="box5-themes">
+            <a href="#">
+                <img src="./jpg5.png" width="556">
+            </a>
+        </div>
+        <div class="box6-themes">
+            <a href="#">
+                <img src="./jpg6.png" width="556">
+            </a>
+        </div>
+        <div class="box7-themes">
+            <a href="#">
+                <img src="./jpg7.png" width="556">
+            </a>
+        </div>
+        <div class="box8-themes">
+            <a href="#">
+                <img src="./jpg8.png" width="556">
+            </a>
+        </div>
+        <div class="box9-themes">
+            <a href="#">
+                <img src="./jpg9.png" width="556">
+            </a>
+        </div>
+        <div class="box10-themes">
+            <a href="#">
+                <img src="./jpg10.png" width="556">
+            </a>
+        </div>
+        <div class="box11-themes">
+            <a href="#">
+                <img src="./jpg11.png" width="556">
+            </a>
+        </div>
+        <div class="box12-themes">
+            <a href="#">
+                <img src="./jpg12.png" width="556">
+            </a>
+        </div>
+    </div>
+    <div class="end-one">
+        <div class="qrcode">
+            <img src="https://cdn.pinduoduo.com/upload/home/img/common/pdd_foot_wechat.png" width="162" height="162">
+            <div class="text-qrcode">
+                <span>扫描二维码微信关注</span>
+            </div>
+        </div>
+        <div class="qrcode">
+            <img src="https://cdn.pinduoduo.com/upload/e48dac21-db3b-4801-b047-6f14d0805614.png.slim.png" width="162" height="162">
+            <div class="text-qrcode">
+            <span>扫描二维码下载App</span>
+            </div>
+        </div>
+        <div class="qrcode">
+            <img src="https://cdn.pinduoduo.com/upload/home/img/common/pdd_foot_service.png" width="162" height="162">
+            <div class="text-qrcode">            
+            <span>微信扫码免费领取</span>
+            </div>
+            <div class="text-qrcode" style="margin: 0;padding: 0;">
+            <span>拼多多店铺</span>
+            </div>
+        </div>
+        <div class="contact">
+            <ul>
+                <li>联系我们</li>
+                <li>客服&举报电话：021-53395288</li>
+                <li>商家热线：021-5339-5088</li>
+                <li>商家客服服务时间：8:00-20:30</li>
+                <li>消费者客服服务时间：8:00-23:00</li>
+                <li>消费者客服外呼号码显示：9541366（仅呼出，不支持呼入）</li>
+                <li>上海寻梦信息技术有限公司</li>
+            </ul>
+        </div>
+        <div class="more">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span>入驻多多国际</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                        <span>校园招聘</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>关于我们</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                        <span>帮助中心</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                        <span>下载App</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>消费者保障</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                        <span>知识产权</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                        <span>廉正举报</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>服务协议</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                        <span>隐私政策</span>
+                    </a>
+                </li>                
+                <li>
+                    <a href="#">
+                        <span>征求意见</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Investor Relations</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="end-two">
+        <div class="text-one">
+            <span>Copyright 2015-2024 pinduoduo.com 版权所有</span>
+            <a href="#"><span>(增值电信业务经营许可证：沪B2-20170215)</span></a>
+        </div>
+        <div class="text-two">
+            <ul>
+                <li><a href="#"><span>互联网药品信息服务资格证书：（沪）-经营性-2024-0019</span></a></li>
+                <li><a href="#"><span>网络文化经营许可证：沪网文 [2022] 3418-243 号</span></a></li>
+                <li><a href="#"><span>药品网络交易服务第三方平台备案：（沪）网药平台备字〔2023〕第000006-001号</span></a></li>
+            </ul>
+        </div>
+        <div class="text-three">
+            <ul>
+                <li><a href="#"><span>沪公网安备 31010502000392号</span></a></li>
+                <li><span>（沪）网械平台备字[2018]第00003号</span></li>
+                <li><a href="#"><span>沪ICP备15010535号-13</span></a></li>
+                <li><a href="#"><span>营业执照</span></a></li>
+            </ul>
+        </div>
+        <div class="text-four">
+            <span>全国旅游服务热线：12301</span>
+        </div>
+    </div>
+    <div class="end-three">
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/home/img/common/wgxxjb_v2.png" height="50"></a>
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/home/img/common/yhxxjb.jpg" height="50"></a>
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/home/img/common/pdd_weiquan_entry.png" height="50"></a>
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/home/img/common/pdd_food_trade_entry.jpg" height="50"></a>
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/home/img/common/pdd_wangjing_tip.jpg" height="50"></a>
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/home/img/common/pdd_foot_shop_comment.png" height="50"></a>
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/04ff787e-10d4-4f9c-9ebc-97b7311535b3.png.slim.png" height="50"></a>
+        <a href="#"><img src="https://cdn.pinduoduo.com/upload/b8d18a4e-798f-4002-b70b-189fa6a1f9e8.png.slim.png" height="50"></a>
+    </div>
+</body>
+</html>
