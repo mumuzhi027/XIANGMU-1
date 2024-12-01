@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM机器</title>
+</head>
+<body>
+    <script>
+        var a = prompt('这是一个ATM机器有存钱、取钱、查询余额、退出的功能\n输入1:存钱\n输入2:取钱\n输入3:查询余额\n输入4:退出此次模拟')
+        var money = 0
+        while (a != 4){    
+            if (a == 1){
+                var money_in = Number(prompt('请输入要存入的额度'))
+                money = money + money_in
+                alert('存款成功！')
+                var a = prompt('这是一个ATM机器有存钱、取钱、查询余额、退出的功能\n输入1:存钱\n输入2:取钱\n输入3:查询余额\n输入4:退出此次模拟')
+            }
+            else if (a == 2){
+                var money_out = Number(prompt('请输入要取出的额度'))
+                if (money < money_out){
+                    alert('余额不足！')
+                    var a = prompt('这是一个ATM机器有存钱、取钱、查询余额、退出的功能\n输入1:存钱\n输入2:取钱\n输入3:查询余额\n输入4:退出此次模拟')
+                }
+                else{
+                    money = money - money_out
+                    alert('取款成功！')
+                    var a = prompt('这是一个ATM机器有存钱、取钱、查询余额、退出的功能\n输入1:存钱\n输入2:取钱\n输入3:查询余额\n输入4:退出此次模拟')
+                }
+            }
+            else if (a == 3){
+                alert('您的余额还有' + money)
+                var a = prompt('这是一个ATM机器有存钱、取钱、查询余额、退出的功能\n输入1:存钱\n输入2:取钱\n输入3:查询余额\n输入4:退出此次模拟')
+            }
+            else if (a == 4){
+                alert('已退出')
+                break
+            }
+            else{
+                alert('亲，你还没有填内容或是填入了无效内容哦')
+                var a = prompt('这是一个ATM机器有存钱、取钱、查询余额、退出的功能\n输入1:存钱\n输入2:取钱\n输入3:查询余额\n输入4:退出此次模拟')
+                }
+        }
+    </script>
+</body>
+</html>
