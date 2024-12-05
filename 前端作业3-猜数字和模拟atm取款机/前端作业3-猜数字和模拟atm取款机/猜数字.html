@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字</title>
+</head>
+<body>
+    <script>
+        var x = 500
+        alert('猜的数字在1000以内哦')
+        function submit(){
+            var a = document.querySelector('input').value
+            // console.log(a)
+            if (a == ''){
+                alert('亲，你还没有填内容哩')
+            }
+            else if(a > x){
+                alert('猜大了哦')
+            }
+            else if(a < x){
+                alert('猜小了哦')
+            }
+            else{
+                alert('恭喜，猜对了！')
+            }
+        }
+    </script>
+    <input type="text">
+    <button onclick="submit()">提交你的答案</button>
+</body>
+</html>
