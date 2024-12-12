@@ -1,0 +1,87 @@
+/* 定义变量以提高可维护性 */
+:root {
+    --primary-bg: #35424a;
+    --primary-color: #fff;
+    --secondary-bg: #f4f4f4;
+    --card-bg: #fff;
+    --card-border: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 重置默认样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-bg);
+}
+
+/* 页头样式 */
+header {
+    background: var(--primary-bg);
+    color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+/* 主内容区域 */
+main {
+    padding: 20px;
+}
+
+/* 作业列表容器 */
+#assignments {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* 单个作业卡片 */
+.assignment {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* 作业标题样式 */
+.assignment h3 {
+    margin: 0 0 10px;
+}
+
+/* 鼠标悬停卡片效果 */
+.assignment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: var(--primary-bg);
+    color: var(--primary-color);
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #assignments {
+        padding: 15px;
+    }
+
+    .assignment {
+        padding: 10px;
+    }
+
+    header, footer {
+        padding: 15px;
+        font-size: 18px;
+    }
+}

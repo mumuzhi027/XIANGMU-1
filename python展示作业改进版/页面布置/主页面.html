@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小组作业展示</title>
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="./样式.css">
+</head>
+<body>
+    <header>
+        <h1>小组作业展示页面</h1>
+    </header>
+    <main>
+        <section id="assignments" aria-labelledby="assignments-title">
+            <h2 id="assignments-title">作业展示列表</h2>
+            <div class="assignment" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <h3>孙启源的绘图</h3>
+                <p>芝士一个emoji</p>
+                <a href="../图片样例存放/sqy.png" target="_blank" aria-label="查看孙启源的绘图">
+                    点击康康图像
+                </a>
+                <div class="details" style="display: none;">这是一个有趣的表情图案！</div>
+            </div>
+            <div class="assignment" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <h3>毛成鑫的绘图</h3>
+                <p>芝士一个循环几何图形绘图</p>
+                <a href="../图片样例存放/mcx.png" target="_blank" aria-label="查看毛成鑫的绘图">
+                    点击康康图像
+                </a>
+                <div class="details" style="display: none;">这个几何图形展示了循环的美感。</div>
+            </div>
+            <div class="assignment" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <h3>王梦凡的绘图</h3>
+                <p>芝士一个红红的爱心</p>
+                <a href="../图片样例存放/wmf1.png" target="_blank" aria-label="查看王梦凡的绘图">
+                    点击康康图像
+                </a>
+                <div class="details" style="display: none;">一颗温暖的爱心！</div>
+            </div>
+            <div class="assignment" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <h3>张琪迎的绘图</h3>
+                <p>芝士一个爱心小人</p>
+                <a href="../图片样例存放/zqy.png" target="_blank" aria-label="查看张琪迎的绘图">
+                    点击康康图像
+                </a>
+                <div class="details" style="display: none;">爱心小人，温馨又可爱！</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 小组作业展示. 保留所有权利.</p>
+    </footer>
+</body>
+</html>
