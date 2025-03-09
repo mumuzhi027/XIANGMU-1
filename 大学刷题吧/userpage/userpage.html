@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的</title>
+    <link rel="stylesheet" href="userpage.css">
+    <link rel="stylesheet" href="../All-purpose.css">
+</head>
+
+<body>
+    <!-- 顶部栏 -->
+    <div class="header">
+        <img src="./elements/return.png" id="return" onclick="Gotomainpage()">
+        <div class="title">我的</div>
+        <div></div>
+    </div>
+
+    <!-- 中间内容区域 -->
+    <div class="content">
+        <img class="avatar" src="./elements/usershot.png">
+        <div class="option" id="profile-option" onclick="showProfilePopup()">
+            <span class="option-text">个人资料</span>
+        </div>
+        <div class="option" id="password-option" onclick="showPasswordPopup()">
+            <span class="option-text">密码修改</span>
+        </div>
+        <div class="option" id="badge-option" onclick="showBadgePopup()">
+            <span class="option-text">徽章展示栏</span>
+            <div></div>
+        </div>
+        <div class="option" id="delete-option" onclick="showDeregisterPopup()">
+            <span class="option-text">注销</span>
+            <img src="./elements/navigate.png" width="30px" height="30px">
+        </div>
+        <div class="option" id="help-option" onclick="showHelpPopup()">
+            <span class="option-text">帮助</span>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="bottom-nav" id="bottom-nav">
+        <button class="nav-button" onclick="Gotomainpage()">
+            <img src="./elements/main.png" alt="" width="38px" height="38px">
+        </button>
+        <button class="nav-button" onclick="alert('任务跳转逻辑')">
+            <img src="./elements/check-in2.png" alt="" width="33.43px" height="39px">
+        </button>
+        <button class="nav-button">
+            <img src="./elements/user.png" alt="" width="33px" height="33px">
+        </button>
+    </div>
+
+    <!-- 个人资料弹出界面 -->
+    <div class="profile-popup" id="profile-popup">
+        <div class='profile-content'>
+            <div class="header">
+                <img src="./elements/return.png" id="return" onclick="hideProfilePopup()">
+                <div class="title">个人资料</div>
+            </div>
+            <img src="./elements/usershot.png" class="avatar" id="sub-avatar">
+            <div class="form-group">    
+                <label class="form-label" for="name">姓名</label>
+                <input class="form-input" type="text" id="name" placeholder="请输入姓名">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="school">学校</label>
+                <input class="form-input" type="text" id="school" placeholder="请输入学校名称">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="major">专业</label>
+                <input class="form-input" type="text" id="major" placeholder="请输入专业">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="studentId">学号</label>
+                <input class="form-input" type="text" id="studentId" placeholder="请输入学号">
+            </div>
+            <div class="button-group">
+                <button class="cancel-button" onclick="hideProfilePopup()">取消</button>
+                <button class="confirm-button" onclick="saveProfile()">确认</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 密码修改弹出界面 -->
+    <div class="password-popup" id="password-popup">
+        <div class="password-content">
+            <div class="header">
+                <img src="./elements/return.png" id="return" onclick="hidePasswordPopup()">
+                <div class="title">密码修改</div>
+            </div>
+            <div class="form-group" style="margin-top: 50px;">
+                <input class="form-input" type="text" placeholder="请输入学号" style="width: 210px">
+            </div>
+            <div class="form-group">
+                <input class="form-input" type="password" placeholder="请输入新密码" style="width: 210px">
+            </div>
+            <div class="form-group" style="margin-bottom: 40px;">
+                <input class="form-input" type="password" placeholder="请再次输入新密码" style="width: 210px">
+            </div>
+            <div class="button-group">
+                <button class="cancel-button" onclick="hidePasswordPopup()">取消</button>
+                <button class="confirm-button" onclick="changePassword()">确认</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 注销账户弹窗 -->
+    <div class="popup" id="popup">
+        <div class="popup-words">
+            <p style="padding-top: 50px;">是否确认</p>
+            <p>注销账户</p>
+        </div>
+        <div class="button-container">
+            <button class="popup-button cancel-button-popup" onclick="hideDeregisterPopup()">取消</button>
+            <button class="popup-button confirm-button-popup" onclick="confirmDelete()">确认</button>
+        </div>
+    </div>
+    <!-- 注销成功弹窗 -->
+    <div class="popup" id="popup-yes">
+        <div class="popup-words">
+            <p style="padding-top: 50px;">注销账户</p>
+            <p>成功！</p>
+        </div>
+        <button class="popup-button confirm-button-popup-2nd" onclick="hidePopupyes()">确认</button>
+    </div>
+    <!-- 徽章展示弹出界面 -->
+    <div class="badge-popup" id="badge-popup">
+        <div class="badge-content">
+            <div class="header" style="margin-bottom: 20px;">
+                <img src="./elements/return.png" id="return" onclick="hideBadgePopup()">
+                <div class="title">徽章展示栏</div>
+            </div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+            <div class="badge-item"></div>
+        </div>
+    </div>
+
+    <!-- 帮助弹出界面 -->
+    <div class="help-popup" id="help-popup">
+        <div class="help-container">
+            <div class="header">
+                <img src="./elements/return.png" id="return" onclick="hideHelpPopup()">
+                <div class="title">帮助</div>
+            </div>
+            <div class="help-content">
+                <p class="help-words">大学刷题吧</p>
+                <p class="help-words">使用指导</p>
+                <p class="help-content-words">（一）产品说明：</p>
+                <p class="help-content-words">该产品是面向大学生专业课程学习，提供题目参考和视频学习的平台。</p>
+                <p class="help-content-words">（二）个人信息保存或更改</p>
+                <p class="help-content-words">途径一：（首页）注册或登录（方便确定专业科目和年级，以及错题集信息保存）</p>
+                <p class="help-content-words">途径二：点击“我的”，进入下一层级后可从“（点击）个人资料”，“（点击）密码修改”，“（点击）注销账户”，“（点击）帮助”四个选项查看或者修改相应的个人信息。</p>
+                <p class="help-content-words">（三）功能介绍：</p>
+                <p class="help-content-words">1，题目练习：（点击）“筛选”，选择所要练习的科目（点击）“反馈”，查看历史成绩以及正确率列表</p>
+                <p class="help-content-words">2，每日打卡：可以查看打卡天数，（点击）签到</p>
+                <p class="help-content-words">3，错题集：（点击）“错题整理”查看错题列表（点击）“错题重做”</p>
+                <p class="help-content-words">4，课程讲解：在搜索框查看相关课程列表</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="userpage.js"></script>
+</body>
+
+</html>

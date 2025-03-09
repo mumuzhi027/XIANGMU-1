@@ -1,0 +1,92 @@
+.body {
+    top: 0;
+    width: 393px;
+    height: 732px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+.return {
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+    background-color: #002fa7;
+    border: none;
+    outline: none;
+}
+.re{
+    width: 11px;
+    height: 19px;
+}
+ .header{    
+   padding-top: -4px;
+   background-color: #002fa7;
+   color: white;
+   display: flex;
+   align-items: center;
+   top: 0;
+   width: 393px;
+   height: 60px;
+ }
+  .title {
+    text-align: center;
+    flex: 1;
+  }
+ .grade{
+    height: 22px;
+    width: 393px;
+    background-color:white;
+    margin-top: 58px;
+    text-align: center;
+}
+/* 滚动容器 */
+.timeline {
+    width: 393px;
+    height: 633px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 16px;
+    padding: 30px 0;
+}
+
+/* 年份列表容器 */
+.years-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+}
+
+/* 年份按钮样式 */
+.year-btn {
+    width: 219px;
+    height: 60px;
+    background: #ffffff;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #212529;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 悬停交互效果 */
+.year-btn:hover {
+    transform: scale(1.05);
+    border-color: #002fa7;
+    color: #002fa7;
+    box-shadow: 0 6px 16px rgba(0, 47, 167, 0.15);
+}
+
+/* 现代滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #002fa7;
+    border-radius: 4px;
+}

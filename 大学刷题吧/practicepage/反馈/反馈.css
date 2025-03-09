@@ -1,0 +1,136 @@
+.body {
+    top: 0;
+    width: 393px;
+    height: 732px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+.return {
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+    background-color: #002fa7;
+    border: none;
+    outline: none;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+}
+.re{
+    width: 11px;
+    height: 19px;
+}
+ .header{    
+   padding-top: -4px;
+   background-color: #002fa7;
+   color: white;
+   display: flex;
+   align-items: center;
+   top: 0;
+   width: 393px;
+   height: 60px;
+ }
+  .title {
+    text-align: center;
+    flex: 1;
+  }
+ .grade{
+    height: 22px;
+    width: 393px;
+    background-color:white;
+    margin-top: 58px;
+    text-align: center;
+}
+.button1 {
+    width: 320px;
+    height: 95px;
+    background-color: white;
+    color: white;
+    border: none;
+    outline: none;
+    display: block;
+    margin: 0 auto;
+    padding: 0px;
+    margin-left: 29px;
+    position: relative;
+    cursor: pointer;
+    background: url('Rectangle 173.png') center/cover no-repeat;    
+    background-size: contain;
+    background-position: center;
+    margin-top: 15px;
+}
+.button-element {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  z-index: 1; /* 确保元素在背景之上 */
+}
+#element1 {
+  --pos-top: 7px;
+  --pos-left: 17px;
+  --width: 32px;
+  --height: 22px;
+  top: var(--pos-top);
+  left: var(--pos-left);
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+
+}
+
+#element2 {
+  --pos-top: 7px;
+  --pos-right: 40px;
+  --width: 32px;
+  --height: 22px;
+  top: var(--pos-top);
+  right: var(--pos-right);
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+
+}
+
+#element3 {
+  --pos-bottom: 30px;
+  --pos-left: 17px;
+  --width: 48px;
+  --height: 22px;
+  bottom: var(--pos-bottom);
+  left: var(--pos-left);
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+
+}
+
+#element4 {
+  --pos-bottom: 30px;
+  --pos-right: 25px;
+  --width: 40px;
+  --height: 25px;
+  bottom: var(--pos-bottom);
+  right: var(--pos-right);
+  width: var(--width);
+  height: var(--height);
+  background-color: white;
+}
+.zt1{
+    width: 32px;
+    height: 22px;
+}
+.zt2{
+    width: 32x;
+    height: 22px;
+}
+.zt3{
+    width: 48px;
+    height: 22px;
+}
+.zt4{
+    width: 40px;
+    height:25px;
+}

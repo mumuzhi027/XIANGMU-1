@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <link rel="stylesheet" href="年份.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <button class="return" onclick="location.href='../筛选.html'"> 
+            <img src="返回 图标.png" class="re">
+        </button>
+    <div class="title">筛选</div>
+        <div></div>
+    </div>
+    <div class="grade">请选择年份</div>
+    <div class="timeline">
+        <div class="years-container" id="yearsList">
+            <!-- 年份按钮将通过JavaScript生成 -->
+        </div>
+    </div>
+
+    <script>
+        // 修改后的JavaScript代码
+        const yearsContainer = document.getElementById('yearsList');
+        const startYear = 2024;
+        const totalYears = 10;
+
+        for (let i = 0; i < totalYears; i++) {
+            const yearButton = document.createElement('button');
+            yearButton.className = 'year-btn';
+            const currentYear = startYear - i;
+            yearButton.textContent = currentYear;
+
+            // 添加点击跳转功能
+            yearButton.addEventListener('click', function() {
+                // 跳转页面并携带年份参数
+                window.location.href = `题型/题型.html?year=${currentYear}`;
+            });
+            
+            yearsContainer.appendChild(yearButton);
+        }
+    </script>    
+</body>
+</html>

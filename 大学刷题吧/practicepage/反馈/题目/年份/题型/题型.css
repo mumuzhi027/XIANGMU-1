@@ -1,0 +1,63 @@
+.body {
+    top: 0;
+    width: 393px;
+    height: 732px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+ #return{
+  position: relative;
+  width: 11px;
+  height: 19px;
+  top: -3px;
+  left: 19px;
+ }
+ .header{    
+   padding-top: -4px;
+   background-color: #002fa7;
+   color: white;
+   display: flex;
+   align-items: center;
+   top: 0;
+   width: 393px;
+   height: 60px;
+ }
+  .title {
+    text-align: center;
+    flex: 1;
+  }
+ .grade{
+    height: 22px;
+    width: 393px;
+    background-color:white;
+    margin-top: 58px;
+    text-align: center;
+}
+.button1{
+    display: block;
+    margin: 0 auto;
+    width: 188px;
+    background-color:white;
+    color: white;
+    border: none;
+    outline: none;
+    padding-top: 27px;
+   }
+  .button2{
+    display: block;
+    margin: 0 auto;
+    width: 188px;
+    background-color:white;
+    color: white;
+    border: none;
+    outline: none;
+    padding-top: 23px;
+ }
+  .tu1{
+    width: 188px;
+    height: auto;
+  }
+  .tu2{
+    width: 188px;   
+    height: auto;
+  }

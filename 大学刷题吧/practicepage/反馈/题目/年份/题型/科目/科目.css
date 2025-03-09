@@ -1,0 +1,104 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 393px;
+    height: 732px;
+}
+.body {
+    top: 0;
+    width: 393px;
+    height: 732px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+.header {
+    padding-top: 4px; /* 修正为正值 */
+    background-color: white;
+    color: black; /* 修改文字颜色 */
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 393px;
+    height: 60px;
+}
+.return {
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+}
+.title {
+    text-align: center;
+    flex: 1;
+}
+.problem{
+    width: 393px;
+    height: 186px;
+}
+/* 容器样式 */
+.container {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 393px;
+    height: 436px;
+    background-color:white;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 列表样式 */
+.list {
+    width: 361px;
+    height: 210px;
+    overflow-y: auto; /* 允许垂直滚动 */
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 0; /* 移除默认的 margin-top */
+}
+
+/* 列表项样式 */
+.item {
+    height: 50px;
+    width: 361px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 鼠标悬停效果 */
+.item:hover {
+    background-color: #f0f0f0;
+}
+
+/* 移除最后一个列表项的下边框 */
+.item:last-child {
+    border-bottom: none;
+}
+.container1{
+    width: 240px;
+    height: 42px;
+    padding-top: 51px;
+    background-color: white;
+}
+.button2{
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 42px;
+    background-color: white;
+
+}
+.button2:hover {
+    background-color: #f0f0f0;
+}
+.提交{
+    width: 240px;
+    height: 42px;
+    object-fit: contain;
+}

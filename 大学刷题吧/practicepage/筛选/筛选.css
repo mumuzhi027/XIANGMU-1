@@ -1,0 +1,69 @@
+.body {
+    top: 0;
+    width: 393px;
+    height: 732px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+.return {
+  position: relative;
+  width: 11px;
+  height: 19px;
+  top: -3px;
+  left: 19px;
+  background-color: #002fa7;
+  border: none;
+  outline: none;
+}
+.re{
+  width: 11px;
+  height: 19px;
+}
+.header{    
+   padding-top: -4px;
+   background-color: #002fa7;
+   color: white;
+   display: flex;
+   align-items: center;
+   top: 0;
+   width: 393px;
+   height: 60px;
+ }
+  .title {
+    text-align: center;
+    flex: 1;
+  }
+  .grade{
+    height: 22px;
+    width: 393px;
+    background-color:white;
+    text-align: center;
+    padding-top: 70px;
+  }
+  .container {
+    width: 393px;
+    height: 393px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 106px);
+    grid-template-rows: repeat(2, 106px);
+    gap: 45px;
+    place-content: center;
+}
+.btn {
+    width: 106px;
+    height: 106px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color:white;
+}
+.t{
+  display: block; /* 消除图片底部间隙 */
+  width: 106px;
+  height: 106px; /* 填充整个按钮 */
+  object-fit: cover; /* 保持图片比例 */
+}

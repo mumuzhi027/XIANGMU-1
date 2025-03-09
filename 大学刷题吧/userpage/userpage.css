@@ -1,0 +1,275 @@
+*{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* 顶部栏样式 */
+#return{
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+}
+
+.header {
+    padding-top: -4px;
+    background-color: #002fa7;
+    color: white;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 393px;
+    height: 60px;
+}
+
+/* 标题样式 */
+.title {
+    text-align: center;
+    flex: 1;
+}
+
+/* 虚拟头像样式 */
+.avatar{
+    margin-bottom: 15px;
+    width: 100px;
+    height: 100px;
+}
+/* 中间内容区域样式 */
+.content {
+    background-color: white;
+    padding: 20px;
+    padding-top: 20px;
+    height: 643px;
+}
+
+/* 功能选项样式 */
+.option {
+    background-color: #ececec;
+    padding: 4px 13px 4px 13px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    height: 35px;
+}
+
+/* 选项文字样式 */
+.option-text {
+    font-size: 16px;
+}
+
+/* 右箭头样式 */
+.right-arrow {
+    font-size: 16px;
+}
+
+/* 底部导航栏样式 */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fbfbfb;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 393px;
+    z-index: 0;
+}
+
+.nav-button {
+    border: none;
+    background: none;
+}
+
+
+/* 导航图标样式 */
+.nav-icon {
+    font-size: 24px;
+}
+
+/* 个人资料弹出界面样式 */
+.profile-popup {
+    display: none;
+    top: 0;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+}
+.profile-content{
+    width: 393px;
+    height: 730px;
+    z-index: 1;
+}
+
+/* 输入栏通用格式 */
+.form-group {
+    display: flex;
+    margin-bottom: 15px;
+    padding: 20px 20px;
+    width: 250px;
+    height: 30px;
+    border: none;
+    background-color: #ececec;
+    border-radius: 30px;
+    margin: auto;
+    margin-bottom: 25px;
+}
+
+.form-label {
+    position: relative;
+    bottom: 14px;
+    color: blue;
+}
+
+.form-input {
+    position: relative;
+    bottom: 13px;
+    padding: 0px;
+    width: 150px;
+    height: 25px;
+    border: none;
+    background-color: #ececec;
+    text-align: center;
+}
+
+.button-group {
+    text-align: center;
+}
+
+.cancel-button,
+.confirm-button{
+    margin-top: 8px;
+    width: 109px;
+    height: 42px;
+    border: 1px solid #002FA7;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.cancel-button{
+    background-color: white;
+    color: #002FA7;
+    margin-right: 10px;
+}
+
+.confirm-button{
+    background-color: #002FA7;
+    color: white;
+}
+
+/* 密码修改弹出界面样式 */
+.password-popup {
+    display: none;
+    top: 0;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+}
+.password-content {
+    width: 393px;
+    height: 730px;
+    z-index: 1;
+}
+
+
+/* 徽章展示弹出界面样式 */
+.badge-popup {
+    display: none;
+    top: 0;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+}
+
+.badge-content {
+    width: 393px;
+    height: auto
+}
+
+.badge-item {
+    width: 80px;
+    height: 80px;
+    background-color: #ececec;
+    border-radius: 6px;
+    margin: 5px;
+    display: inline-block;
+}
+
+/* 注销 */
+/* 弹窗样式 */
+.popup {
+    display: none;
+    position: fixed;
+    width: 240px;
+    height: 210px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fbfbfb;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.popup-words{
+    width: 240px;
+    height: 150px;
+}
+/* 弹窗按钮样式 */
+.button-container {
+    width: 120px;
+    height: 60px;
+    display: grid;
+    grid-auto-flow: column;
+}
+.popup-button {
+    width: 120px;
+    height: 60px;
+    border: 1px solid #d9d9d9;
+    background-color: #fbfbfb;
+}
+
+.cancel-button-popup {
+    border-radius: 0 0 0 7px;
+}
+
+.confirm-button-popup {
+    border-radius: 0 0 7px 0;
+}
+.confirm-button-popup-2nd {
+    width: 240px;
+    height: 60px;
+    border-radius: 0 0 7px 7px;
+}
+
+/* 帮助 */
+.help-popup {
+    display: none;
+    top: 0;
+    position: fixed;
+    background-color: white;
+    text-align: center;
+} 
+
+.help-container{
+    width: 393px;
+    height: 732px;
+    background-color: #d9d9d9;
+    z-index: 1;
+}
+.help-content {
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 25px;
+    padding: 10px;
+    width: 85%;
+    height: 85%;
+}
+.help-words{
+    font-size: 36px;
+}
+.help-content-words{
+    font-size: 16px;
+}
