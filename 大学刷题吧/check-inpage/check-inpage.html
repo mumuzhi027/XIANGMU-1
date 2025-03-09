@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="打卡主页.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="loginPage" class="page">
+        <div class="header">
+            <button class="return" onclick="location.href='../mainpage/HomePage.html'"> 
+                <img src="返回 图标.png" class="re">
+            </button>
+            <div class="title">每日打卡</div>
+            <div></div>
+        </div>  
+        <div class="container">
+            <div class="z1">已打卡天数</div>
+            <div class="z2">
+                <img src="xx.png" alt="xx">
+            </div>
+            <div class="z3">
+                <img src="签到 图标.png" alt="签到">
+            </div>
+        </div>
+        <button class="trigger-btn">
+            <img src="Frame 57.png" alt="立即签到" class="tu57">
+        </button>    
+        <div class="popup">
+            <div class="popup-content">
+                <div class="message">已打卡，恭喜获得徽章</div>
+                <button class="confirm-btn">确认</button>
+            </div>
+        </div>
+                <div class="rank-container" id="rankContainer">
+            <div class="header1">打卡徽章榜</div>
+            <ul class="rank-list" id="rankList">
+                <li class="rank-item">
+                    <div class="rank-number">1</div>
+                    <span>用户</span>
+                </li>
+                <li class="rank-item">
+                    <div class="rank-number">2</div>
+                    <span>用户</span>
+                </li>
+                <li class="rank-item">
+                    <div class="rank-number">3</div>
+                    <span>用户</span>
+                </li>
+                <li class="rank-item" style="display: none;">
+                    <div class="rank-number">4</div>
+                    <span>用户</span>
+                </li>
+                <li class="rank-item" style="display: none;">
+                    <div class="rank-number">5</div>
+                    <span>用户</span>
+                </li>
+            </ul>
+            <button class="toggle-btn" id="toggleBtn">
+                <img src="Frame 58.png" class="tu58" >
+            </button>
+        </div>    
+        <script>
+            const triggerBtn = document.querySelector('.trigger-btn');
+            const popup = document.querySelector('.popup');
+            const confirmBtn = document.querySelector('.confirm-btn');
+    
+            triggerBtn.addEventListener('click', () => {
+                popup.style.display = 'block';
+            });
+    
+            confirmBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+    
+            // 点击浮窗外部关闭
+            window.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+            const container = document.getElementById('rankContainer');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const rankList = document.getElementById('rankList');
+        let isExpanded = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            container.classList.toggle('expanded');
+            
+            if(isExpanded) {
+                Array.from(rankList.children).forEach(item => {
+                    item.style.display = 'flex';
+                });
+            } else {
+                Array.from(rankList.children).forEach((item, index) => {
+                    if(index >= 3) item.style.display = 'none';
+                });
+            }
+        });
+
+        </script>        
+    </div>
+</body>
+</html> 

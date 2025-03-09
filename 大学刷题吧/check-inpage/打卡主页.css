@@ -1,0 +1,230 @@
+.body {
+    top: 0;
+    width: 393px;
+    height: 732px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+.return {
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+    background-color: #002fa7;
+    border: none;
+    outline: none;
+}
+.re{
+    width: 11px;
+    height: 19px;
+}
+.header {    
+    padding-top: -4px;
+    background-color: #002fa7;
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 393px;
+    height: 60px;
+}
+.title {
+    text-align: center;
+    flex: 1;
+}
+.container {
+    width: 252px;
+    height: 251px;
+    margin-left: 70px; 
+    margin-top: 60px;
+    background-image: url('Rectangle 49.png');
+    background-position: center;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    /* 新增flex布局 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 22px; /* 容器顶部内边距 */
+}
+.z1{
+    width: 100px;
+    height: 22px;
+    margin-bottom: 58px; /* z1-z2间距 */
+    text-align: center;
+}
+.z2{
+    width: 106px;
+    height: 64px;
+    margin-bottom: 19px; /* z2-z3间距 */
+}
+.z2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 图片自适应 */
+}
+.z3{
+    width: 36px;
+    height: 42px;
+}
+.z3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 图片自适应 */
+}
+.trigger-btn {
+    width: 240px;
+    height: 54px;
+    background-color: white;
+    color: white;
+    margin-top: 28;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 80px;
+}
+.tu57{
+    display: block; /* 消除图片底部间隙 */
+    width: 100%;
+    height: 100%; /* 填充整个按钮 */
+    object-fit: cover; /* 保持图片比例 */
+}
+.trigger-btn:hover {
+    background-color: white;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 264px;
+    height: 210px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    z-index: 9999; /* 新增层级保证 */
+}
+.popup-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.message {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.confirm-btn {
+    width: 264px;
+    height: 66px;
+    background-color: white;
+    color: black; /* 修改文字颜色 */
+    border: none;
+    border-top: 1px solid black; /* 添加上边框 */
+    border-radius: 0 0 12px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.confirm-btn:hover {
+    background-color:white;
+}
+.rank-container {
+    width: 361px;
+    height: 201px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    margin-left: 16px;
+}
+
+.header1 {
+    height: 40px;
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2D3748;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #EDF2F7;
+}
+
+.rank-list {
+    height: calc(100% - 40px - 58px);
+    overflow-y: auto;
+    padding: 6px 16px;
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    margin: 4px 0;
+    font-size: 14px;
+    color: #4A5568;
+}
+
+.rank-number {
+    width: 20px;
+    margin-right: 12px;
+    font-weight: 500;
+    color: #718096;
+}
+
+.toggle-btn {
+    width: 337px;
+    height: 42px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: 0;
+}
+.tu58{
+    width: 337px;
+    height: 42px;
+}
+
+.expanded {
+    height: 576px;
+}
+
+.rank-list::-webkit-scrollbar {
+    width: 4px;
+}
+.rank-list::-webkit-scrollbar-track {
+    background: #F8F9FA;
+}
+.rank-list::-webkit-scrollbar-thumb {
+    background: #CBD5E0;
+    border-radius: 2px;
+}
