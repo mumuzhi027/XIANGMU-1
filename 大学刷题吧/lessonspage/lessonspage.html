@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lessonspage.css">
+  <link rel="stylesheet" href="../All-purpose.css">
+  <title>课程讲解</title>
+</head>
+
+<body>
+  <!-- 课程讲解页面 -->
+  <div id="course-intro">
+    <div class="header">
+        <img src="./elements/return.png" id="return" onclick="Gotomainpage()">
+        <div class="title">课程讲解</div>
+        <div></div>
+    </div>
+    <div class="category-box">
+      <a href="#" class="category-item" onclick="showsubjectlesson()">高等数学</a>
+      <a href="#" class="category-item" onclick="showsubjectlesson()">线性代数</a>
+      <a href="#" class="category-item" onclick="showsubjectlesson()">大学英语</a>
+      <a href="#" class="category-item" onclick="showsubjectlesson()">大学物理</a>
+    </div>
+    <div class="recommended-courses">
+      <h2 class="advicewords">推荐课程</h2>
+      <div class="course-item" data-video="video1.mp4" onclick="showadvicelesson()">
+        <div class="course-thumbnail"></div>
+        <div class="course-info">
+          <h3 class="course-name">课程名称</h3>
+          <p class="course-desc">课程简介课程简介课程简介</p>
+          <p class="course-desc">课程简介</p>
+        </div>
+      </div>
+      <div class="course-item" data-video="video2.mp4">
+        <div class="course-thumbnail"></div>
+        <div class="course-info">
+          <h3 class="course-name">课程名称</h3>
+          <p class="course-desc">课程简介课程简介课程简介</p>
+          <p class="course-desc">课程简介</p>
+        </div>
+      </div>
+      <div class="course-item" data-video="video3.mp4">
+        <div class="course-thumbnail"></div>
+        <div class="course-info">
+          <h3 class="course-name">课程名称</h3>
+          <p class="course-desc">课程简介课程简介课程简介</p>
+          <p class="course-desc">课程简介</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 课程播放页面-推荐课程 -->
+  <div id="course-play-advice">
+    <div class="header">
+        <img src="./elements/return.png" id="return" onclick="hideadvicelesson()">
+        <div class="title">课程名称</div>
+        <div></div>
+    </div>
+    <div class="video-container">
+      <video controls>
+        <source id="video-source" src="" type="video/mp4">
+      </video>
+    </div>
+    <div class="course-description">
+        <div class="coursetitle">
+            <h2 style="text-align: center;">课程名称</h2>
+        </div>
+        <p>课程介绍课程介绍课程介绍课程介绍</p>
+        <p>课程介绍课程</p>
+        <p>介绍课程介绍课程介绍课程介绍课程介绍</p>
+        <p>介绍课程介绍课程介绍课程介绍</p>
+        <p>课程介绍课程介绍课程介绍课程介绍课程介绍</p>
+        <p>课程介绍</p>
+        <p>课程介绍课程</p>
+        <p>介绍课程介绍课程介绍课程介绍</p>
+        <p>介绍课程介绍课程介绍课程介绍</p>
+        <p>课程介绍课程介绍课程介绍课程介绍课程介绍</p>
+        <p>课程介绍课程介绍</p>
+    </div>
+  </div>
+
+    <!-- 课程播放页面-点击科目后的页面 -->
+    <div id="course-play">
+        <div class="header">
+            <img src="./elements/return.png" id="return" onclick="hidelesson()">
+            <div class="title">课程名称</div>
+            <div></div>
+        </div>
+        <div class="video-container">
+            <video controls>
+            <source id="video-source" src="" type="video/mp4">
+            </video>
+        </div>
+        <div class="course-description">
+            <div class="coursetitle">
+                <h2 style="text-align: center;">课程名称</h2>
+            </div>
+            <p>课程介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程</p>
+            <p>介绍课程介绍课程介绍课程介绍课程介绍</p>
+            <p>介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍</p>
+            <p>课程介绍课程</p>
+            <p>介绍课程介绍课程介绍课程介绍</p>
+            <p>介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程介绍</p>
+        </div>
+    </div>
+
+  <!-- 课程列表页面 -->
+  <div id="course-list-page">
+    <div class="header">
+        <img src="./elements/return.png" id="return" onclick="hidesubjectlesson()">
+        <div class="title">课程列表</div>
+        <div></div>
+    </div>
+    <div class="course-list">
+      <div class="select-prompt">请选择课程</div>
+      <div class="course-item" data-video="video4.mp4" onclick="showlesson()">
+        <div class="course-thumbnail"></div>
+        <div class="course-info">
+            <h3 class="course-name">课程名称</h3>
+            <p class="course-desc">课程简介课程简介课程简介</p>
+            <p class="course-desc">课程简介</p>
+        </div>
+      </div>
+      <div class="course-item" data-video="video5.mp4" onclick="showlesson()">
+        <div class="course-thumbnail"></div>
+        <div class="course-info">
+            <h3 class="course-name">课程名称</h3>
+            <p class="course-desc">课程简介课程简介课程简介</p>
+            <p class="course-desc">课程简介</p>
+        </div>
+      </div>
+      <div class="course-item" data-video="video6.mp4" onclick="showlesson()">
+        <div class="course-thumbnail"></div>
+        <div class="course-info">
+            <h3 class="course-name">课程名称</h3>
+            <p class="course-desc">课程简介课程简介课程简介</p>
+            <p class="course-desc">课程简介</p>
+        </div>
+      </div>
+      <div class="course-item" data-video="video7.mp4" onclick="showlesson()">
+        <div class="course-thumbnail"></div>
+        <div class="course-info">
+            <h3 class="course-name">课程名称</h3>
+            <p class="course-desc">课程简介课程简介课程简介</p>
+            <p class="course-desc">课程简介</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="lessonspage.js"></script>
+</body>
+
+</html>

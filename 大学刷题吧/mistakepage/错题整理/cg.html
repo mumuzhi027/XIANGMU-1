@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .list-header {
+            height: 62px;
+            background-color:white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body {
+            top: 0;
+            width: 393px;
+            height: 732px;
+            margin: auto;
+            background-color: #f4f4f4;
+        }
+
+        .header {    
+            padding-top: -4px;
+            background-color: #002fa7;
+            color: white;
+            display: flex;
+            align-items: center;
+            top: 0;
+            width: 393px;
+            height: 60px;
+        } 
+
+        .return {
+            position: relative;
+            width: 11px;
+            height: 19px;
+            top: -3px;
+            left: 19px;
+        }
+
+        .title {
+            text-align: center;
+            flex: 1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .scroll-container {
+            width: 393px;
+            height: 628px; 
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            padding: 0; 
+            margin-top: 52px;
+        }
+
+        /* 自定义滚动条样式 */
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .list-item {
+            padding: 15px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .list-item:hover {
+            background-color: #f8f8f8;
+            transform: translateX(5px);
+        }
+
+        .list-item:active {
+            background-color: #f0f0f0;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 10px;
+            color: #666;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <img src="返回 图标.png" class="return">
+            <div class="title">错题整理</div>
+            <div></div>
+        </div>
+        <div>
+            <div class="scroll-container" id="scrollContainer">
+                <div class="list-header">错题列表</div> <!-- 新增表头 -->
+                <div class="loading" id="loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const scrollContainer = document.getElementById('scrollContainer');
+        const loading = document.getElementById('loading');
+        let itemCount = 1;
+
+        // 创建初始列表项
+        function createItems(num) {
+            for (let i = 0; i < num; i++) {
+                const item = document.createElement('div');
+                item.className = 'list-item';
+                item.textContent = `Item ${itemCount++}`;
+                
+                // 添加点击跳转功能
+                item.addEventListener('click', () => {
+                    // 跳转到2.html
+                    window.location.href = '错题/错题.html';
+                });
+
+                scrollContainer.insertBefore(item, loading);
+            }
+        }
+
+        // 模拟数据加载
+        function loadMoreItems() {
+            loading.style.display = 'block';
+            setTimeout(() => {
+                createItems(10);
+                loading.style.display = 'none';
+            }, 1000);
+        }
+
+        // 滚动事件监听
+        scrollContainer.addEventListener('scroll', () => {
+            const { scrollTop, scrollHeight, clientHeight } = scrollContainer;
+            
+            // 滚动到底部时加载更多
+            if (scrollTop + clientHeight >= scrollHeight - 10) {
+                loadMoreItems();
+            }
+        });
+
+        // 初始化加载初始数据
+        createItems(15);
+    </script>
+</body>
+</html>

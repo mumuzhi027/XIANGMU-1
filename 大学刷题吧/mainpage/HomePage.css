@@ -1,0 +1,252 @@
+/* 标题栏样式 */
+.header-homepage {
+    background-color: #002FA7;
+    height: 130px;
+    padding-top: 30px;
+}
+.return{
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: 2px;
+    right: 120px;
+}
+.headtopic{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+.title {
+    position: relative;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+}
+/* 暂定头像 */
+.headshot{
+    position: relative;
+    right: 250px;
+    height: 41px;
+    width: 41px;
+}
+
+/* 搜索栏样式 */
+.search-bar {
+    position: relative;
+    left: 60px;
+    width: 250px;
+    background-color: #ececec;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.avatar-icon {
+    width: 15px;
+    height: 16px;
+    background-image: url('./elements/search.png'); /* 预留用户头像图片位置 */
+    background-size: contain;
+}
+
+.search-input {
+    position: relative;
+    background-color: #ececec;
+    left: 13px;
+    border: none;
+    outline: none;
+}
+
+/* 功能按钮区样式 */
+.function-buttons {
+    color: #002FA7;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 20px 0;
+    border-radius: 30px 30px 0 0;
+}
+
+.function-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    background: none;
+}
+
+.function-text {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* 圆角处蓝色背景 */
+.function-buttons:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: auto;
+    width: 393px;
+    height: 200px;
+    background-color: #002FA7;
+    border-radius: 10px;
+    z-index:-1;
+}
+/* 每日推荐课程区样式 */
+.daily-recommend {
+    background-color: white;
+    height: 506px;
+}
+
+.recommend-title {
+    padding: 15px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* 推荐课程 */
+.course-item {
+    margin: 40px auto ;
+    width: 242px;
+    height: 99px;
+    display: flex;
+    border: 1.5px solid #002FA7;
+    border-radius: 10px 30px 30px 10px;
+}
+
+.course-img {
+    border-radius: 10px;
+    border: 1.5px solid #002FA7;
+    width: 82px;
+    height: 99px;
+    background-color: #ececec; /* 可在获取图片后设置背景图片 */
+    margin-right: 10px;
+}
+
+.course-info {
+    flex: 1;
+    margin-top: 5px;
+}
+
+.course-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.course-desc {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 每日推荐分割线伪元素样式（左侧） */
+.recommend-title::before {
+    content: "";
+    position: absolute;
+    top: 43.5%;  /* 不知道为什么，这两根线只能适配手机浏览器 */
+    width: 112px;
+    height: 1px;
+    background-color: #d9d9d9;
+    left: 3px;
+    margin-left: 40px;
+}
+  
+/* 每日推荐分割线伪元素样式（右侧） */
+.recommend-title::after {
+    content: "";
+    position: absolute;
+    top: 43.5%;
+    width: 112px;
+    height: 1px;
+    background-color: #d9d9d9;
+    right: 2px;
+    margin-right: 40px;
+}
+
+/* 底部导航栏样式 */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fbfbfb;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 393px;
+}
+
+.nav-button {
+    border: none;
+    background: none;
+}
+
+
+/* 课程播放页面样式 */
+#course-play-advice {
+display: none;
+height: 100%;
+}
+
+.video-container {
+padding: 20px;
+text-align: center;
+}
+
+video {
+width: 100%;
+max-width: 600px;
+}
+
+.course-description {
+padding: 20px;
+height: auto;
+position: relative;
+bottom: 0;
+margin: auto;
+border-radius: 30px 30px 0 0;
+box-shadow: 0 0px 4px #c6c6c6;
+}
+
+/* 课程列表页面样式 */
+#course-list-page {
+display: none;
+}
+
+.select-prompt {
+text-align: center;
+color: #999;
+padding-top: 15px;
+}
+
+.coursetitle{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* 顶部栏样式 */
+.return-course{
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+}
+
+.header {
+    padding-top: -4px;
+    background-color: #002fa7;
+    color: white;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 393px;
+    height: 60px;
+}
+
+/* 标题样式 */
+.title-course {
+    text-align: center;
+    flex: 1;
+}

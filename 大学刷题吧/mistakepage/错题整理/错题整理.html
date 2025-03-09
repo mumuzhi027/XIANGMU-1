@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="错题整理.css">
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <button class="return" onclick="location.href='../错题主页.html'"> 
+                <img src="返回 图标.png" class="re">
+            </button>
+            <div class="title">错题整理</div>
+            <div></div>
+        </div>
+        <div>
+            <div class="scroll-container" id="scrollContainer">
+                <div class="list-header">错题列表</div> <!-- 新增表头 -->
+                <div class="loading" id="loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const scrollContainer = document.getElementById('scrollContainer');
+        const loading = document.getElementById('loading');
+        let itemCount = 1;
+
+        // 创建初始列表项
+        function createItems(num) {
+            for (let i = 0; i < num; i++) {
+                const item = document.createElement('div');
+                item.className = 'list-item';
+                item.textContent = `Item ${itemCount++}`;
+                
+                // 添加点击跳转功能
+                item.addEventListener('click', () => {
+                    // 跳转到2.html
+                    window.location.href = '错题/错题.html';
+                });
+
+                scrollContainer.insertBefore(item, loading);
+            }
+        }
+
+        // 模拟数据加载
+        function loadMoreItems() {
+            loading.style.display = 'block';
+            setTimeout(() => {
+                createItems(10);
+                loading.style.display = 'none';
+            }, 1000);
+        }
+
+        // 滚动事件监听
+        scrollContainer.addEventListener('scroll', () => {
+            const { scrollTop, scrollHeight, clientHeight } = scrollContainer;
+            
+            // 滚动到底部时加载更多
+            if (scrollTop + clientHeight >= scrollHeight - 10) {
+                loadMoreItems();
+            }
+        });
+
+        // 初始化加载初始数据
+        createItems(15);
+    </script>
+</body>
+</html>

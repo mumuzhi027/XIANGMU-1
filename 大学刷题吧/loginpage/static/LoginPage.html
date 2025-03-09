@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="LoginPage.css">
+  <title>欢迎来到大学刷题吧！</title>
+</head>
+
+<body>
+  <!-- 登录页面 -->
+  <div id="loginPage" class="page">
+    <button class="login-button">登 录</button>
+    <form id="loginForm">
+      <div>
+      <input type="text" placeholder="用户名/手机号" class="input-field" id="username">
+      </div>
+      <input type="password" placeholder="请输入密码" class="input-field" id="password">
+    </form>
+    <div>      
+      <button class="cancel-button">取消</button>
+      <button type="submit" class="confirm-button" onclick="Gotomainpage()">确认登陆</button>
+    </div>
+    <div class="Register">
+    <a class="go" >如果您第一次登录请前往</a>
+    <a id="registerButton">注册</a>
+    </div>
+      <div class="Reset">
+      <a id="forgotPasswordButton">忘记密码</a>
+      </div>
+    <div class="bottomsth">
+      <div class="other-ways">
+        <p>其他方式</p>
+        <div class="social-icons">
+          <a href="#"><img src="elements/wechat.png" alt="微信图标"></a>
+          <a href="#"><img src="elements/QQ.png" alt="QQ图标"></a>
+          <a href="#"><img src="elements/email.png" alt="邮箱图标"></a>
+        </div>
+      </div>
+      <div class="agreement-checkbox">
+        <input type="checkbox">
+        <p>我已查阅并同意完整的</p>
+        <a href="#" class="ServiceAgreement" id="ServiceAgreement" onclick="showHelpPopup()">《大学刷题吧服务协议》</a>
+        <p>及</p>
+        <a href="#" class="PrivacyAgreement" id="PrivacyAgreement" onclick="showPrivacyPopup()">《隐私政策》</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注册页面 -->
+  <div id="registerPage" class="page" style="display: none;">
+    <h2 class="registerTopic">注 册</h2>
+    <form id="registerForm">
+      <input type="text" placeholder="手机号" class="input-field" id="registerPhone">
+      <button type="button" id="registerGetCodeButton">获取验证码</button>
+      <input type="text" placeholder="请输入验证码" class="input-field" id="registerVerificationCode">
+      <input type="password" placeholder="请输入密码" class="input-field" id="registerNewPassword">
+      <input type="password" placeholder="再次确认密码" class="input-field" id="registerConfirmNewPassword">
+    </form>
+    <button class="cancel-button" id="registerCancelButton">取消</button>
+    <button type="submit" id="registerConfirmButton">确认注册</button>
+    <div class="other-ways">
+      <p>其他方式</p>
+      <div class="social-icons">
+        <a href="#"><img src="elements/wechat.png" alt="微信图标"></a>
+        <a href="#"><img src="elements/QQ.png" alt="QQ图标"></a>
+        <a href="#"><img src="elements/email.png" alt="邮箱图标"></a>
+      </div>
+    </div>
+    <div class="agreement-checkbox">
+      <input type="checkbox">
+      <p>我已查阅并同意完整的</p>
+      <a class="ServiceAgreement" href="#" onclick="showHelpPopup()">《大学刷题吧服务协议》</a>
+      <p>及</p>
+      <a class="PrivacyAgreement" href="#" onclick="showPrivacyPopup()">《隐私政策》</a>
+    </div>
+  </div>
+
+  <!-- 密码重置页面 -->
+  <div id="resetPasswordPage" class="page" style="display: none;">
+    <h2 class="resetTopic">重置密码</h2>
+    <form id="resetPasswordForm">
+      <div id="use1">
+      <input type="text" placeholder="手机号" class="input-field" id="phone">
+      <button type="button" id="getCodeButton">获取验证码</button>
+      </div>
+      <input type="text" placeholder="请输入验证码" class="input-field" id="verificationCode">
+      <input type="password" placeholder="请输入密码" class="input-field" id="newPassword">
+      <input type="password" placeholder="再次确认密码" class="input-field" id="confirmNewPassword">
+    </form>
+      <button class="cancel-button" id="resetCancelButton">取消</button>
+      <button type="submit" id="confirmResetButton">确认重置</button>
+  </div>
+
+  <!-- 登录失败弹出框 -->
+  <div id="loginFailModal" class="modal">
+    <div class="modal-content">
+      <h2>登录失败</h2>
+      <p id="failMessage"></p>
+      <button id="retryButton">重新输入</button>
+    </div>
+  </div>
+
+  <!-- 重置成功弹出框 -->
+  <div id="resetSuccessModal" class="modal">
+    <div class="modal-content">
+      <h2>重置成功！</h2>
+      <button id="resetSuccessConfirmButton">确认</button>
+    </div>
+  </div>
+
+  <!-- 注册成功弹出框 -->
+  <div id="registerSuccessModal" class="modal">
+    <div class="modal-content">
+      <h2>注册成功！</h2>
+      <p>欢迎来到大学刷题吧！</p>
+      <button id="registerSuccessConfirmButton">确认</button>
+    </div>
+  </div>
+
+  <!-- 湘大刷题吧使用 -->
+  <div class="help-popup" id="help-popup">
+    <div class="help-container">
+        <div class="header">
+            <img src="elements/return.png" id="return" onclick="hideHelpPopup()">
+            <div class="title">大学刷题吧服务协议</div>
+        </div>
+        <div class="help-content">
+            <p class="help-words">大学刷题吧</p>
+            <p class="help-words">使用指导</p>
+            <p class="help-content-words">（一）产品说明：</p>
+            <p class="help-content-words">该产品是面向大学生专业课程学习，提供题目参考和视频学习的平台。</p>
+            <p class="help-content-words">（二）个人信息保存或更改</p>
+            <p class="help-content-words">途径一：（首页）注册或登录（方便确定专业科目和年级，以及错题集信息保存）</p>
+            <p class="help-content-words">途径二：点击“我的”，进入下一层级后可从“（点击）个人资料”，“（点击）密码修改”，“（点击）注销账户”，“（点击）帮助”四个选项查看或者修改相应的个人信息。</p>
+            <p class="help-content-words">（三）功能介绍：</p>
+            <p class="help-content-words">1，题目练习：（点击）“筛选”，选择所要练习的科目（点击）“反馈”，查看历史成绩以及正确率列表</p>
+            <p class="help-content-words">2，每日打卡：可以查看打卡天数，（点击）签到</p>
+            <p class="help-content-words">3，错题集：（点击）“错题整理”查看错题列表（点击）“错题重做”</p>
+            <p class="help-content-words">4，课程讲解：在搜索框查看相关课程列表</p>
+        </div>
+    </div>
+  </div>
+
+  <div class="privacy-popup" id="privacy-popup">
+    <div class="help-container">
+        <div class="header">
+            <img src="elements/return.png" id="return" onclick="hidePrivacyPopup()">
+            <div class="title">隐私政策</div>
+        </div>
+        <div class="help-content">
+            <p class="help-content-words">校园刷题 APP 隐私保护指引</p>
+            <p class="help-content-words">第1.0版本</p>
+            <p class="help-content-words">更新日期：（）</p>
+            <p class="help-content-words">生效日期：（）</p>
+            <p class="help-content-words">校园刷题 APP （以下简称"校园刷题"）是由湘潭大学（     ）创办，联系方式：（       研发与运营（以下简称「校园刷题」或「我们」)。）我们为用户（以下简称「您」)通过校园刷题 APP 提供在线网络刷题服务（包括以视频讲解产品或其他形式组织的内容产品和／或有关服务），以「让用户更好地学习」为使命，旨在以可持续发展、独立运营并获得健康增长的方式通过题库产品提供值得信赖的内容给用户。我们根据《中华人民共和国网络安全法》《中华人民共和国个人信息保护法》《中华人民共和国数据安全法》《常见类型移动互联网应用程序必要个人信息范围规定》等法律法规，并参考《信息安全技术个人信息安全规范》( GB / T 35273-2020）等国家标准，制定集市《个人信息保护指引》（以下简称「本指引」）并致力于保护您的个人信息安全。</p>
+            <p class="help-content-words">请您在使用本平台前，仔细阅读并充分理解本指引。重点内容我们已采用粗体标业，希望特别关注。</p>
+            <p class="help-content-words">如对本指引有任何疑问，您可以通过本指引中「如何联系我们」提供的联系方式与我们联系。我们会不时对指引进行修订。</p>
+            <p class="help-content-words">一、我们如何收集您的个人信息</p>
+            <p class="help-content-words">二、我们如何委托处理、共享、转让、公开披露您的个人信息</p>
+            <p class="help-content-words">三、我们如何保护您的个人信息</p>
+            <p class="help-content-words">四、我们如何管理您的个人信息</p>
+            <p class="help-content-words">五、我们如何存储您的个人信息</p>
+            <p class="help-content-words">六、 Cookie 和其他技术</p>
+            <p class="help-content-words">七、我们如何更新与修改本指引</p>
+            <p class="help-content-words">八、我们如何处理未成年人的个人信息</p>
+            <p class="help-content-words">九、您如何联系我们</p>
+            <p class="help-content-words">十、争议解决</p>
+            <p class="help-content-words">十一、概念及定义</p>
+            <p class="help-content-words">1．我们如何收集您的个人信息我们会遵循正当、合法、必要的原则，出于本指引所述的以下目的，收集和使用您在使用服务过程中主动提供或因使用校园刷题产品和／或服务而产生的个人信息。如果我们要将您的个人信息用于本指引未载明的其它用途，或基于特定目的将收集而来的信息用于其他目的，我们将以合理的方式向您告知，并再次征得您的同意。如果您对下列内容中的概念有疑问，请查阅第11条的定义和解释。在您使用刷题产品和／或服务时，我们需要／可能需要在如下两种情况下收集和使用您的个人信息：</p>
+            <p class="help-content-words">为实现向您提供刷题产品和／或服务基本的业务功能（属于全部业务功能的一部分），您须授权我们收集、使用的必要信息。如您拒绝提供相应信息，您将无法使用相应刷题功能。如您拒绝刷题软件收集您的任何个人信息，刷题软件将无法向您提供包括基本业务功能在内的本平台任何功能。在此情况下，刷题软件向您提供仅浏览」模式，旨在协助您在决定接受本指引前得到本平台的初步体验，即部分内容浏览，该等信息一般是基于其他用户同意本指引并提供他们的必要个人信息生成的内容。</p>
+            <p class="help-content-words">提示您注意：由于不同的产品或服务所需的个人信息有所不同，我们还会在您使用具体产品和／或服务前通过页面提示、交互流程等方式征求您的同意，获取个人信息的范围以您同意的特定产品和／或服务的协议或规则为准。</p>
+            <p class="help-content-words">由于我们向您提供的产品和／或服务是不断更新的，如果某一产品或服务未在前述内容中说明且收集了您的信息，我们会通过页面提示、交互流程、网站公告等方式另行向您说明信息收集的内容，以征求您的同意。</p>
+            <p class="help-content-words">台上发布图片、评论等内容，可以与其他用户进行互动，包括回复他人评论，对其他用户发布的内容进行点赞。为保证提供服务的安全性、稳定性以及刷题服务的可持续性和健康成长，我们会收集您所发布的内容。</p>
+            <p class="help-content-words">1.1.1帐号注册、登录、账号绑定和安全 您可以使用微信、 QQ 第三方帐号注册集市，您可以选择授权集市在符合相关法律法规要求的前提下读取并获得您在该第三方平台上公布、记录的公开信息（包括第三方平台 ID 、昵称、头像）。集市需要您授权从第三方获取上述信息是为了记住您作为集市用户的登录身份。在您使用微信或 QQ 授权登录时，我们将记录由微信或 QQ 返回的用户 ID 、昵称、头像信息，作为您在集市的身份标识，以备您再次使用集市时进行校验，以保证账号安全。微信或QQ返回的您的ID、昵称、头像可以和其他用户重名，集市会设置并记录专属于此账号的系统识别标记，以便系统和其他用户能够准确分辨。您可以在个人中心设置头像和昵称。</p>
+            <p class="help-content-words">1.1.2个人资料为展示您的个人形象，您可以设置帐号昵称，您的昵称可以和其他用户重名，刷题软件会设置并记录。</p>
+            <p class="help-content-words">1.1.3客户服务 当您向集市提起举报、投诉、申诉或进行咨询时，为了方便与您联系或帮助您解决问题，我们可需要您提供姓名、手机号码、电子邮箱及其他联系方式等个人信息，并可能使用这些信息以与您取得联系。如果您提交的是侵权投诉，我们还会依据法律规定要求您提交身份证、授权委托、权属证明等，以明确您作为投诉主体的资格，并判断您的投诉是否成立。如根据法律规定需要将您的前述信息提交给法院或其他监管机构或者司法部门的，我们将依法提供。您不提供上述信息，我们的客服将无法为您提供前述服务，但不影响您使用我们提供的其他服务。</p>
+            <p class="help-content-words">当您作为被投诉方或纠纷相关方时，为了核实您在平台发布的内容，并厘清该内容是否影响和损害集市或他人权益，我们也可能会使用您在身份认证时提供的信息，或者您在发帖时公开的联系方式与您联系。</p>
+            <p class="help-content-words">1.1.4搜索功能 当您使用集市提供的搜索功能时，我们会收集和存储您查询的关键字和您在搜索结果中的点击情况。</p>
+            <p class="help-content-words">1.1.5系统权限获取情况说明</p>
+            <p class="help-content-words">1）定位权限：当您使用地理位置签到打卡时，我们的 App 会向您申请定位手机权限。若拒绝授权，您将无法享受上述服务，但不影响您使用 APP 的其他功能。</p>
+            <p class="help-content-words">2）相机（摄像头）权限：当您在使用拍摄上传图片及视频内容时，我们会向您申请使用相机权限。若拒绝授权，您将无法享受上述服务，但不影响您使用 APP 的其他功能。</p>
+            <p class="help-content-words">3）相册（图片库）权限：当您设置用户头像图片、发布内容、截屏反馈信息时，如果选择相册内的图片或视频，我们会向您申请使用相册（图片库）权限。若拒绝授权，您将无法享受上述服务，但不影响您使用 APP 的其他功能。</p>
+            <p class="help-content-words">4）读写手机存储权限：用于 App 写入／下载／保存／修改／删除图片、视频、文件、崩溃日志信息，我们的 App 会向您申请读写手机存储权限。若拒绝授权，可能会影响 APP 运行效率，但不影响您使用 APP 的功能。</p>
+            <p class="help-content-words">5）手机通知栏权限：为保障消息的推送和服务的及时性，我们的 App 会向您申请手机通知栏权限。若拒绝授权，您将无法享受上述服务，但不影响您使用 APP 的其他功能。</p>
+            <p class="help-content-words">6）麦克风权限：当您在与客服沟通中使用录音功能时，我们的 App 会向您申请麦克风权限。若拒绝授权，您将无法享受上述服务，不影响您使用APP的功能，</p>
+            <p class="help-content-words">7)设备信息权限：为了向您提供防止恶意登录、防作弊检测功能，并确保其可用性，我们的 App 会向您申请获取设备信息（ IMEI / MAC / Android ID / IDFA / IDFV / Open UDID / GUID / SIM 卡 IMSI 信息／ Android 序列号）权限。若拒绝授权，您将无法享受上述服务，但不影响您使用 APP 的其他功能。</p>
+            <p class="help-content-words">8）已安装应用列表：为了判断是否已经安装过该程序，并确保其可用性。我们的 App 会向您申请获取已安装应用列表，并且该信息仅用于 APP 内部功能，不会上传服务器，不会进行保存和对外泄露。若拒绝授权，您将无法享受上述服务，但不影响您使用 APP 的其他功能。</p>
+            <p class="help-content-words">1.2除同意外的其他合法性事由 根据相关法律法规的规定，在以下情形中，我们可以在不征得您的授权同意的情况下收集、使用一些必要的个人信息：</p>
+            <p class="help-content-words">（1）为订立、履行个人作为一方当事人的合同所必须</p>
+            <p class="help-content-words">（2）为履行法定职责或者法定义务所必需；</p>
+            <p class="help-content-words">（3）为应对突发公共卫生事件，或者紧急情况下为保护自然人的生命健康和财产安全所必需；</p>
+            <p class="help-content-words">2．我们如何委托处理、共享、转让、公开披露您的个人信息</p>
+            <p class="help-content-words">2.1委托处理您的个人信息</p>
+            <p class="help-content-words">为了向您提供更完善、优质的产品和／或服务，某些功能可能由我们的服务合作方提供（如我们的第三方服务供应商、承包商、代理等），我们会委托服务合作方代表我们处理您的某些个人信息，例如第三方供应商代表我们发出电子邮件或推送通知、代表我们发送调研邀请、代表我们向您邮寄您已购买或确认接收的商品、对去标识化的信息进行数据统计分析。</p>
+            <p class="help-content-words">对接受我们委托处理您个人信息的公司、组织和个人，我们会与其签署严格的保密协定或数据处理协议，明确委托事项、和委托处理目的、期限、处理方式、处理个人信息的种类、保护措施以及双方的权利义务等，要</p>
+            <p class="help-content-words">2.2共享您的个人信息</p>
+            <p class="help-content-words">为了向您提供完善的产品和服务，我们的某些服务或技术将由授权合作伙伴提供。请您知悉，我们不会主动向其他个人信息处理者提供您的个人信息，我们仅会出于合法、正当、必要、特定、明确的目的共享您的个人信息，并且只会共享必要的个人信息。在以下情形下，我们将向其他个人信息处理者提供您的个人信息，向您告知接收方的名称或者姓名、联系方式、处理目的、处理方式和个人信息的种类，并取得您的单</p>
+            <p class="help-content-words">2.3转让您的个人信息</p>
+            <p class="help-content-words">原则上我们不会将您的个人信息控制权向其他公司、组织或个人进行转移。如果发生合并、收购或破产清算，将涉及到个人信息转让，此种情况下我们将向您告知接收方的名称或者姓名和联系方式，并要求新的持有您个人信息的公司、组织继续受本指引的约束。如果本指引中约定的个人信息的收集、处理方式发生任何改变，该公司、组织将重新向您征求授权同意。</p>
+            <p class="help-content-words">2.4公开披露您的个人信息</p>
+            <p class="help-content-words">除非获取您的单独同意，我们不会公开披露您的个人信息。</p>
+            <p class="help-content-words">特别提示：使用刷题软件的过程中，您主动公开分享、共享的个人信息，不受本指引限制（如向其他互联网平台转发内容）。您应注意，任何您分享的信息均可被任何第三方阅读、收集和使用，请您审慎考虑通过刷题软件发布和传播的内容中含有您的个人信息。您充分了解，当您自行作出披露时，刷题软件仅是存储了包含该等信息的内容或系统日志，但不会主动识别该等信息属于您的个人信息。只要您不删除您公开发布的信息，该信息仍可由其他用户或与刷题软件没有关联及不受刷题软件控制的第三方独立地缓存、复制或储存，或通过其他用户或第三方在公众领域保存。例如，当您将您在刷题软件发布的内容转发到其他互联网平台，该平台将独立地展示、缓存或保存您转发的内容，其他互联网用户也转发、保存您的内容，而相应的页面将不受刷题软件的控制。</p>
+        </div>
+    </div>
+  </div>
+  <script src="LoginPage.js"></script>
+</body>
+
+</html>

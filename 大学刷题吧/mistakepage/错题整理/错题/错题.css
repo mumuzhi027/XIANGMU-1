@@ -1,0 +1,102 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    width: 393px;
+    height: 732px;
+}
+.body {
+    top: 0;
+    width: 393px;
+    height: 732px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+.header {
+    padding-top: 4px; /* 修正为正值 */
+    background-color: white;
+    color: black; /* 修改文字颜色 */
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 393px;
+    height: 60px;
+}
+.return {
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+    background-color: white;
+    border: none;
+    outline: none;
+}
+.re{
+    width: 11px;
+    height: 19px;
+}
+.title {
+    text-align: center;
+    flex: 1;
+}
+.question-section {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    height: 265px;
+    width: 393px;
+}
+
+.question-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color:white;
+}
+
+.option:hover {
+    background-color: #e9ecef;
+}
+
+/* 隐藏单选按钮 */
+.option input[type="radio"] {
+    display: none;
+}
+.scroll-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 477px;
+    width: 393px;
+    overflow-y: auto;
+}
+
+.analysis-content {
+    margin-bottom: 20px;
+}
+
+.analysis-title {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.analysis-text {
+    color: #666;
+    font-size: 14px;
+}

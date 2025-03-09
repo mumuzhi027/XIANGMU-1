@@ -1,0 +1,151 @@
+*{
+    font-weight: 400;
+    font-size: 20px;
+}
+.course-intro,
+#course-play-advice,
+#course-play,
+#couser-list-page{
+    top: 0;
+    width: 393px;
+    height: 732px;
+}
+/* 通用的头部样式 */
+.header {
+    padding-top: -4px;
+    background-color: #002fa7;
+    color: white;
+    display: flex;
+    align-items: center;
+    top: 0;
+    width: 393px;
+    height: 60px;
+}
+#return{
+    position: relative;
+    width: 11px;
+    height: 19px;
+    top: -3px;
+    left: 19px;
+}
+.title {
+    text-align: center;
+    flex: 1;
+}
+.advicewords{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.recommended-courses,
+.course-list{
+    position: relative;
+    bottom: 0;
+    width: 94%;
+    margin: auto;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 0px 4px #c6c6c6;
+}
+.course-description{
+    position: relative;
+    bottom: 0;
+    margin: auto;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 0px 4px #c6c6c6;
+}
+.course-list{
+    margin-top: 50px;
+}
+/* 课程讲解页面样式 */
+#course-intro {
+display: block;
+}
+
+.category-box {
+padding: 20px;
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.category-item {
+background-color: #f0f0f0;
+padding: 10px 20px;
+/* border: 1px  #002FA7; */
+border-radius: 5px;
+text-decoration: none;
+color: #333;
+flex: 1 1 calc(25% - 10px);
+text-align: center;
+}
+
+.recommended-courses{
+padding: 20px;
+}
+
+.course-item {
+    margin: 40px auto ;
+    width: 242px;
+    height: 99px;
+    display: flex;
+    border: 1.5px solid #002FA7;
+    border-radius: 10px 30px 30px 10px;
+}
+.course-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.course-desc {
+    font-size: 12px;
+    color: #666;
+}
+.course-thumbnail {
+    border-radius: 10px;
+    border: 1.5px solid #002FA7;
+    width: 82px;
+    height: 99px;
+    background-color: #ececec; /* 可在获取图片后设置背景图片 */
+    margin-right: 10px;
+}
+
+.course-info {
+    flex: 1;
+    margin-top: 5px;
+}
+
+/* 课程播放页面样式 */
+#course-play,
+#course-play-advice {
+display: none;
+}
+
+.video-container {
+padding: 20px;
+text-align: center;
+}
+
+video {
+width: 100%;
+max-width: 600px;
+}
+
+.course-description {
+padding: 20px;
+}
+
+/* 课程列表页面样式 */
+#course-list-page {
+display: none;
+}
+
+.select-prompt {
+text-align: center;
+color: #999;
+padding-top: 15px;
+}
+
+.coursetitle{
+    width: 100%;
+    margin-bottom: 10px;
+}

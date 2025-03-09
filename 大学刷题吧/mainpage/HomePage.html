@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="../All-purpose.css">
+    <title>大学刷题吧</title>
+</head>
+
+<body>
+    <div id="homepage">
+        <!-- 标题栏 -->
+        <div class="header-homepage">
+            <div class="headtopic">
+                <img id="return" class="return" src="./elements/return.png" alt="">
+                <span class="title">大学刷题吧</span>
+            </div>
+            <div class="search-bar">
+                <div class="avatar-icon"></div>
+                <input type="text" placeholder="推荐搜索关键词" class="search-input">
+                <img class="headshot" src="./elements/preheadshot.png" alt="">
+            </div>
+        </div>
+        <!-- 功能按钮区 -->
+        <div class="function-buttons">
+            <button class="function-button" id="parctice-button" onclick="Gotopracticepage()">
+                <img src="./elements/parctice.png" alt="题目练习" width="30px" height="32px">
+                <span class="function-text">题目练习</span>
+            </button>
+            <button class="function-button" id="check-in-button" onclick="Gotocheckinpage()">
+                <img src="./elements/check-in1.png" alt="每日打卡" width="35px" height="32px">
+                <span class="function-text">每日打卡</span>
+            </button>
+            <button class="function-button" id="mistake-button" onclick="Gotomistakepage()">
+                <img src="./elements/mistake.png" alt="错题集" width="30px" height="32px">
+                <span class="function-text">错题集</span>
+            </button>
+            <button class="function-button" id="lessons-button" onclick="Gotolessonspage()">
+                <img src="./elements/lessons.png" alt="课程讲解" width="40px" height="32px">
+                <span class="function-text">课程讲解</span>
+            </button>
+        </div>
+        <div class="daily-recommend">
+            <h3 class="recommend-title">每日推荐</h3>
+            <div class="course-item" onclick="showadvicelesson()">
+                <div class="course-img"></div>
+                <div class="course-info">
+                    <h3 class="course-name">课程名称</h3>
+                    <p class="course-desc">课程简介课程简介课程简介</p>
+                    <p class="course-desc">课程简介</p>
+                </div>
+            </div>
+            <div class="course-item" onclick="showadvicelesson()">
+                <div class="course-img"></div>
+                <div class="course-info">
+                    <h3 class="course-name">课程名称</h3>
+                    <p class="course-desc">课程简介课程简介课程简介</p>
+                    <p class="course-desc">课程简介</p>
+                </div>
+            </div>
+        </div>
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+            <button class="nav-button">
+                <img src="./elements/main.png" alt="" width="38px" height="38px">
+            </button>
+            <button class="nav-button" onclick="Gotocheckinpage()">
+                <img src="./elements/check-in2.png" alt="" width="33.43px" height="39px">
+            </button>
+            <button class="nav-button" onclick="Gotouserpage()">
+                <img src="./elements/user.png" alt="" width="33px" height="33px">
+            </button>
+        </div>
+    </div>
+    <!-- 课程播放页面-推荐课程 -->
+    <div id="course-play-advice">
+        <div class="header-course">
+            <img src="./elements/return.png" class="return-course" id="return" onclick="hideadvicelesson()">
+            <div class="title">课程名称</div>
+            <div></div>
+        </div>
+        <div class="video-container">
+        <video controls>
+            <source id="video-source" src="" type="video/mp4">
+        </video>
+        </div>
+        <div class="course-description">
+            <div class="coursetitle">
+                <h2 style="text-align: center;">课程名称</h2>
+            </div>
+            <p>课程介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程</p>
+            <p>介绍课程介绍课程介绍课程介绍课程介绍</p>
+            <p>介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍</p>
+            <p>课程介绍课程</p>
+            <p>介绍课程介绍课程介绍课程介绍</p>
+            <p>介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程介绍课程介绍课程介绍课程介绍</p>
+            <p>课程介绍课程介绍</p>
+        </div>
+    </div>
+    <script src="HomePage.js"></script>
+</body>
+
+</html>

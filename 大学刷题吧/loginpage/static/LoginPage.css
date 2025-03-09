@@ -1,0 +1,352 @@
+* {    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  top: 0;
+  width: 393px;
+  height: 732px;
+  margin: auto;
+  background-color: #fbfbfb;
+}
+/* 页面通用样式 */
+.page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh; 
+  border-radius: 0; 
+  box-shadow: none; 
+  padding: 20px;
+  text-align: center;
+  background-color: white; 
+}
+
+
+/* 登录按钮样式 */
+.login-button,
+.resetTopic,
+.registerTopic{
+  margin-top: 35px;
+  width: 221px;
+  height: 74px;
+  margin: 35px auto;
+  /* left: 86px; */
+  border-radius: 10px;
+  background-color: #002FA7;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 36px;
+}
+
+/* 输入框样式 */
+.input-field {
+  width: 250px;
+  height: 60px;
+  top: 204px;
+  left: 70px;
+  padding: 10px;
+  margin-bottom: 25px;
+  background-color: #ececec;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
+
+/* 输入框错误状态样式 */
+.input-field.error {
+  border: 1px solid red;
+}
+
+/* 取消按钮和确认按钮通用样式 */
+.cancel-button,
+#registerConfirmButton,
+#confirmResetButton,
+.confirm-button {
+  margin-top: 8px;
+  width: 109px;
+  height: 42px;
+  border: 1px solid #002FA7;
+  border-radius: 10px;
+  font-size: 14px;
+}
+#registerCancelButton,
+#resetCancelButton,
+#confirmResetButton,
+#registerConfirmButton{
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+/* 取消按钮样式 */
+.cancel-button,
+#registerCancelButton{
+  background-color: white;
+  color: #002FA7;
+  margin-right: 10px;
+}
+
+/* 确认按钮样式 */
+.confirm-button,
+#confirmResetButton,
+#registerConfirmButton{
+  background-color: #002FA7;
+  color: white;
+}
+
+/* 注册提示、忘记密码和注册按钮通用样式 */
+.Register{
+  margin-top: 20px;
+}
+.Reset{
+  margin-top: 5px;
+}
+/* 忘记密码和注册按钮样式 */
+.go{
+  color: #B0B0B0;
+}
+.forgot-password,
+#registerButton {
+  color: #002FA7;
+}
+.forgotPasswordButton{
+  font-weight: 500;
+  font-size: 14px;
+}
+.Reset{
+  margin-bottom: 118px;
+}
+/* 其他登录方式部分样式 */
+.other-ways {
+  text-align: center;
+  position: relative;
+}
+.bottomsth{
+  position: relative;
+  bottom: 0;
+}
+/* 其他登录方式文本样式 */
+.other-ways p {
+  display: inline-block;
+  background-color: white;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 其他登录方式分割线伪元素样式（左侧） */
+.other-ways::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  width: 71.02px;
+  height: 1.5px;
+  background-color: black;
+  left: 0;
+  margin-left: 40px;
+}
+
+/* 其他登录方式分割线伪元素样式（右侧） */
+.other-ways::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  width: 71.02px;
+  height: 1.5px;
+  background-color: black;
+  right: 0;
+  margin-right: 40px;
+}
+
+/* 社交图标容器样式 */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* 社交图标链接样式 */
+.social-icons a {
+  margin: 0 10px;
+}
+
+/* 社交图标样式 */
+.social-icons img {
+  width: 58px;
+  height: 58px;
+}
+
+/* 协议复选框样式 */
+.agreement-checkbox {
+  margin-top: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
+  color: #666;
+}
+
+/* 协议复选框输入框样式 */
+.agreement-checkbox input {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.ServiceAgreement,
+.PrivacyAgreement{
+  text-decoration: none;
+}
+
+/* 协议复选框文本样式 */
+.agreement-checkbox p {
+  display: inline;
+  font-weight: 400;
+  size: 14px;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+/* 获取验证码格式 */
+#registerGetCodeButton{
+  position: absolute;
+  top: 155px;
+  right: 25%;
+  padding: 14px 10px;
+  border-radius: 10px;
+  border: 1px;
+  color: white;
+  background-color: #7b92ce;
+}
+#getCodeButton{
+  position: absolute;
+  top: 155px;
+  right: 25%;
+  padding: 14px 10px;
+  border-radius: 30px;
+  border: 1px;
+  background-color: white;
+}
+
+/* 湘大刷题吧使用页面 */
+.help-popup {
+  display: none;
+  top: 0;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+} 
+
+.help-container{
+  width: 393px;
+  height: 732px;
+  background-color: #d9d9d9;
+  z-index: 1;
+}
+.help-content {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 25px;
+  padding: 10px;
+  width: 75%;
+  height: 85%;
+}
+.help-words{
+  font-size: 36px;
+}
+.help-content-words{
+  font-size: 16px;
+}
+
+/* 模态框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 模态框内容样式 */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* 模态框内按钮样式 */
+#retryButton,
+#resetSuccessConfirmButton,
+#registerSuccessConfirmButton {
+  padding: 8px 15px;
+  border: 1px solid #002FA7;
+  border-radius: 5px;
+  background-color: white;
+  color: #002FA7;
+  margin-top: 10px;
+}
+
+/* 服务协议 */
+.privacy-popup,
+.help-popup {
+  display: none;
+  top: 0;
+  position: fixed;
+  background-color: white;
+  text-align: center;
+} 
+
+.help-container{
+  width: 393px;
+  height: 732px;
+  background-color: #d9d9d9;
+  z-index: 1;
+}
+.help-content {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 25px;
+  padding: 10px;
+  width: 85%;
+  height: auto;
+}
+.help-words{
+  font-size: 36px;
+}
+.help-content-words{
+  font-size: 16px;
+}
+/* 顶部栏样式 */
+#return{
+  position: relative;
+  width: 11px;
+  height: 19px;
+  top: -3px;
+  left: 19px;
+}
+
+.header {
+  padding-top: -4px;
+  color: white;
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 393px;
+  height: 60px;
+}
+
+.title {
+  text-align: center;
+  color: black;
+  flex: 1;
+  font-weight: 400;
+  font-size: 20px;
+}
